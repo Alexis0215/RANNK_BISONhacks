@@ -1,13 +1,16 @@
-# RANNK_BISONhacks
 class bison_hack():
-    def __init__(self,user = {},number = 0):
+    def __init__(self,user = {},number = 0,data = {}):
         self.user = user
         self.number = number
+        self.data = data
     def create_account(self):
         u = input("Username: ")
         p =input("Password: ")
         user = self.user
+        data = self.data
         user[u]=p
+        #data[u]= self.number
+        #return u
     def log_options(self):
         user = self.user
         user_i = input("Login or Create Account ?\n Type L for Login & C for Create Account")
@@ -36,12 +39,37 @@ class bison_hack():
        b_hack.log_options()
        b_hack.dashboard()
     def dashboard(self):
+        #data = self.data
         print("Welcome.\n|Dashboard|| My day | Footprints log | me | social | eco map | about us |\n\nYour footprint score is:\n\n",self.number,"\n")
         choice = "r"
         while choice != "q":
-            choice = user_choice= input("Please type a letter: M- My day, f- footprints, m- me, s- social, e- eco map, a-about us")
+            choice = user_choice= input("Please type a letter: M- My day, f- footprints, m- me, s- social, e- eco map, a-about us\n")
             if choice == "f":
-                input("[w]alk\n[b]ike\n[c]arpool\n[m]etro\n[ec]onomic flight\n[el]ectric car\n[h]ybrid\n[r]ecycle")
+                choice2 = "x"
+                while choice2 != "d":
+                    choice2 = input("[w]alk\n[b]ike\n[c]arpool\n[m]etro\n[ec]onomic flight\n[el]ectric car\n[h]ybrid\n[r]ecycle\n[d]one\n")
+                    if choice2 == "w":
+                        self.number += 20
+                    elif choice2 == "b":
+                        self.number += 20
+                    elif choice2 == "c":
+                        self.number += 10
+                    elif choice2 == "m":
+                        self.number += 10
+                    elif choice2 == "ec":
+                        self.number += 30
+                    elif choice2 == "el":
+                        self.number += 30
+                    elif choice2 == "h":
+                        self.number += 30
+                    elif choice2 == "r":
+                        self.number += 5
+                #data[u] = self.number
+                
+                
+
+                
+
 
         #if user_choice= "f":
         #    b_hack.points_tracker() #call points tracker function, goes to footprints log screen 
@@ -53,7 +81,6 @@ class bison_hack():
                 
 
 b_hack = bison_hack()
-#b_hack.welcome_screen()
-b_hack.dashboard()
+b_hack.welcome_screen()
 print("hello")
 
